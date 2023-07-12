@@ -32,21 +32,6 @@
       margin-right: 10px;
     }
 
-    #cart {
-      margin-top: 20px;
-    }
-
-    .cart-item {
-      display: flex;
-      align-items: center;
-      margin-bottom: 10px;
-    }
-
-    .cart-item input[type="number"] {
-      width: 40px;
-      margin-right: 10px;
-    }
-
     .number-input {
       display: inline-flex;
       align-items: center;
@@ -121,6 +106,30 @@
 
     #confirmButton:hover {
       background-color: #45a049;
+    }
+
+
+    #cart {
+      margin-top: 20px;
+    }
+    .cart-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      padding: 10px;
+    }
+    .cart-item span {
+      margin-right: 10px;
+    }
+    .cart-item .quantity {
+      font-weight: bold;
+    }
+    .cart-item .price {
+      margin-left: auto;
+    }
+    .cart-item button {
+      margin-left: 10px;
     }
 
 
@@ -500,7 +509,7 @@ function generateWhatsAppLink() {
 
   message += `\nTotal: ₹${totalPrice.toFixed(2)}`;
 
-  const mobileNumber = '918619258978'; // Replace with your mobile number
+  const mobileNumber = '918619258978'; 
 
   const encodedMessage = encodeURIComponent(message);
   const link = `https://wa.me/${mobileNumber}/?text=${encodedMessage}`;
