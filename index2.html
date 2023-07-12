@@ -1,0 +1,44 @@
+<!--JavaScript - Print value of all checked (selected) CheckBoxes on Button click.-->
+<html>
+    <head>
+        <title>JavaScript - Print value of all checked (selected) CheckBoxes on Button click.</title>
+        <script type="text/javascript">
+            function printChecked() {
+                var items = document.getElementsByName("acs");
+                var selectedItems = "https://wa.me/918619258978?text=Items+Are%0a";
+                for (var i = 0; i < items.length; i++) {
+                    if (items[i].type == "checkbox" && items[i].checked == true) selectedItems += items[i].value + "%0a";
+                }
+                                // Create anchor element.
+                var a = document.createElement('a'); 
+                  
+                // Create the text node for anchor element.
+                var link = document.createTextNode("This is link");
+                  
+                // Append the text node to anchor element.
+                a.appendChild(link); 
+                  
+                // Set the title.
+                a.title = "This is Link"; 
+                  
+                // Set the href property.
+                a.href = selectedItems 
+                  
+                // Append the anchor element to the body.
+                document.body.appendChild(a); 
+                //alert(selectedItems);
+            }
+        </script>
+    </head>
+    <body style="text-align: left;">
+        <h1>JavaScript - Print value of all checked (selected) CheckBoxes on Button click.</h1>
+        <big>Select your favourite accessories: </big><br />
+        <input type="checkbox" name="acs" value="Mobile" />Mobile<br />
+        <input type="checkbox" name="acs" value="Tab" />Tab<br />
+        <input type="checkbox" name="acs" value="Laptop" />Laptop<br />
+        <input type="checkbox" name="acs" value="IPod" />IPod<br />
+        <p>
+            <input type="button" onclick="printChecked()" value="Print Selected Items" />
+        </p>
+    </body>
+</html>

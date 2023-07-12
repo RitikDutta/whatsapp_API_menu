@@ -1,44 +1,413 @@
-<!--JavaScript - Print value of all checked (selected) CheckBoxes on Button click.-->
+<!DOCTYPE html>
 <html>
-    <head>
-        <title>JavaScript - Print value of all checked (selected) CheckBoxes on Button click.</title>
-        <script type="text/javascript">
-            function printChecked() {
-                var items = document.getElementsByName("acs");
-                var selectedItems = "https://wa.me/918619258978?text=Items+Are%0a";
-                for (var i = 0; i < items.length; i++) {
-                    if (items[i].type == "checkbox" && items[i].checked == true) selectedItems += items[i].value + "%0a";
-                }
-                                // Create anchor element.
-                var a = document.createElement('a'); 
-                  
-                // Create the text node for anchor element.
-                var link = document.createTextNode("This is link");
-                  
-                // Append the text node to anchor element.
-                a.appendChild(link); 
-                  
-                // Set the title.
-                a.title = "This is Link"; 
-                  
-                // Set the href property.
-                a.href = selectedItems 
-                  
-                // Append the anchor element to the body.
-                document.body.appendChild(a); 
-                //alert(selectedItems);
-            }
-        </script>
-    </head>
-    <body style="text-align: left;">
-        <h1>JavaScript - Print value of all checked (selected) CheckBoxes on Button click.</h1>
-        <big>Select your favourite accessories: </big><br />
-        <input type="checkbox" name="acs" value="Mobile" />Mobile<br />
-        <input type="checkbox" name="acs" value="Tab" />Tab<br />
-        <input type="checkbox" name="acs" value="Laptop" />Laptop<br />
-        <input type="checkbox" name="acs" value="IPod" />IPod<br />
-        <p>
-            <input type="button" onclick="printChecked()" value="Print Selected Items" />
-        </p>
-    </body>
+<head>
+  <title>Food Items</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+
+  <style>
+    /* Add some basic styling */
+    .food-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .food-item input[type="checkbox"] {
+      margin-right: 10px;
+    }
+    #cart {
+      margin-top: 20px;
+    }
+    .cart-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .cart-item input[type="number"] {
+      width: 40px;
+      margin-right: 10px;
+    }
+
+
+
+/*    input number*/
+input[type="number"] {
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+.number-input {
+  border: 2px solid #ddd;
+  display: inline-flex;
+}
+
+.number-input,
+.number-input * {
+  box-sizing: border-box;
+}
+
+.number-input button {
+  outline:none;
+  -webkit-appearance: none;
+  background-color: transparent;
+  border: none;
+  align-items: center;
+  justify-content: center;
+  width: 1rem;
+  height: 1rem;
+  cursor: pointer;
+  margin: 0;
+  position: relative;
+}
+
+.number-input button:after {
+  display: inline-block;
+  position: absolute;
+  font-family: "Font Awesome 5 Free"; 
+  font-weight: 900;
+  content: '\f077';
+  transform: translate(-50%, -50%) rotate(180deg);
+}
+.number-input button.plus:after {
+  transform: translate(-50%, -50%) rotate(0deg);
+}
+
+.number-input input[type=number] {
+  font-family: sans-serif;
+  max-width: 2rem;
+  padding: .5rem;
+  border: solid #ddd;
+  border-width: 0 2px;
+  font-size: 1rem;
+  height: 1rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+
+
+
+  </style>
+</head>
+<body>
+  <h1>Food Items</h1>
+
+  <div id="food-items">
+    <h2> BURGERS </h2>
+    <div class="food-item">
+      <input type="checkbox" name="item" value="Aloo Tikki" data-price="49">
+      <label>Aloo Tikki</label>
+      <div class="number-input">
+        <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"></button>
+        <input class="quantity" min="1" name="quantity" value="1" type="number">
+        <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
+      </div>
+    </div>
+
+    <div class="food-item">
+      <input type="checkbox" name="item" value="Hell" data-price="69">
+      <label>Veg Supreme</label>
+
+      <div class="number-input">
+        <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"></button>
+        <input class="quantity" min="1" name="quantity" value="1" type="number">
+        <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
+      </div>    
+    </div>
+
+    <div class="food-item">
+      <input type="checkbox" name="item" value="Heaven" data-price="79">
+      <label>Heaven</label>
+
+      <div class="number-input">
+        <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"></button>
+        <input class="quantity" min="1" name="quantity" value="1" type="number">
+        <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
+      </div>    
+    </div>
+
+    <div class="food-item">
+      <input type="checkbox" name="item" value="Hell" data-price="85">
+      <label>Hell</label>
+
+      <div class="number-input">
+        <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"></button>
+        <input class="quantity" min="1" name="quantity" value="1" type="number">
+        <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
+      </div>    
+    </div>
+
+    <h2> MAGGIES </h2>
+
+    <div class="food-item">
+      <input type="checkbox" name="item" value="Plain Maggie" data-price="49">
+      <label>Plain Maggie</label>
+
+      <div class="number-input">
+        <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"></button>
+        <input class="quantity" min="1" name="quantity" value="1" type="number">
+        <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
+      </div>    
+    </div>
+
+    <div class="food-item">
+      <input type="checkbox" name="item" value="Veg Maggie" data-price="59">
+      <label>Veg Maggie</label>
+
+      <div class="number-input">
+        <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"></button>
+        <input class="quantity" min="1" name="quantity" value="1" type="number">
+        <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
+      </div>    
+    </div>
+
+    <div class="food-item">
+      <input type="checkbox" name="item" value="Cheese Veg Maggie" data-price="69">
+      <label>Cheese Veg Maggie</label>
+
+      <div class="number-input">
+        <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"></button>
+        <input class="quantity" min="1" name="quantity" value="1" type="number">
+        <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
+      </div>    
+    </div>
+
+    <div class="food-item">
+      <input type="checkbox" name="item" value="Cheese Burst" data-price="89">
+      <label>Cheese Burst</label>
+
+      <div class="number-input">
+        <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"></button>
+        <input class="quantity" min="1" name="quantity" value="1" type="number">
+        <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
+      </div>    
+    </div>
+
+    <h2> FRIES </h2>
+
+    <div class="food-item">
+      <input type="checkbox" name="item" value="Salty Fries" data-price="65">
+      <label>Salty Fries</label>
+
+      <div class="number-input">
+        <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"></button>
+        <input class="quantity" min="1" name="quantity" value="1" type="number">
+        <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
+      </div>    
+    </div>
+
+    <div class="food-item">
+      <input type="checkbox" name="item" value="Peri Peri" data-price="75">
+      <label>Peri Peri</label>
+
+      <div class="number-input">
+        <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"></button>
+        <input class="quantity" min="1" name="quantity" value="1" type="number">
+        <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
+      </div>    
+    </div>
+
+    <div class="food-item">
+      <input type="checkbox" name="item" value="Cheese Fries" data-price="85">
+      <label>Cheese Fries</label>
+
+      <div class="number-input">
+        <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"></button>
+        <input class="quantity" min="1" name="quantity" value="1" type="number">
+        <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
+      </div>    
+    </div>
+
+    <div class="food-item">
+      <input type="checkbox" name="item" value="Cheese Burst" data-price="95">
+      <label>Cheese Burst</label>
+
+      <div class="number-input">
+        <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"></button>
+        <input class="quantity" min="1" name="quantity" value="1" type="number">
+        <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
+      </div>    
+    </div>
+
+    <h2>COMBO</h2>
+
+    <div class="food-item">
+      <input type="checkbox" name="item" value="Eco Combo" data-price="129">
+      <label>Eco Combo</label>
+
+      <div class="number-input">
+        <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"></button>
+        <input class="quantity" min="1" name="quantity" value="1" type="number">
+        <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
+      </div>    
+    </div>
+
+    <div class="food-item">
+      <input type="checkbox" name="item" value="Heaven Combo" data-price="159">
+      <label>Heaven Combo</label>
+
+      <div class="number-input">
+        <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"></button>
+        <input class="quantity" min="1" name="quantity" value="1" type="number">
+        <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
+      </div>    
+    </div>
+
+    <div class="food-item">
+      <input type="checkbox" name="item" value="Hell Combo" data-price="165">
+      <label>Hell Combo</label>
+
+      <div class="number-input">
+        <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"></button>
+        <input class="quantity" min="1" name="quantity" value="1" type="number">
+        <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
+      </div>    
+    </div>
+
+    <div class="food-item">
+      <input type="checkbox" name="item" value="Family Combo" data-price="175">
+      <label>Family Combo</label>
+
+      <div class="number-input">
+        <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"></button>
+        <input class="quantity" min="1" name="quantity" value="1" type="number">
+        <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
+      </div>    
+    </div>
+
+    <div class="food-item">
+      <input type="checkbox" name="item" value="Supreme Meal" data-price="299">
+      <label>Supreme Meal</label>
+
+      <div class="number-input">
+        <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"></button>
+        <input class="quantity" min="1" name="quantity" value="1" type="number">
+        <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
+      </div>    
+    </div>
+  </div>
+
+  <button onclick="submitItems()">Submit</button>
+
+  <h2>Your Cart</h2>
+  <div id="cart"></div>
+
+  <button id="confirmButton" onclick="generateWhatsAppLink()">Confirm</button>
+
+  <script type="text/javascript">
+    function submitItems() {
+  const selectedItems = document.querySelectorAll('input[name="item"]:checked');
+
+  document.getElementById('cart').innerHTML = '';
+
+  selectedItems.forEach(item => {
+    const quantityInput = item.parentElement.querySelector('input[name="quantity"]');
+    const quantity = parseInt(quantityInput.value);
+    const price = parseFloat(item.dataset.price);
+    const total = (quantity * price).toFixed(2);
+
+    const cartItem = document.createElement('div');
+    cartItem.classList.add('cart-item');
+
+    const itemName = document.createElement('span');
+    itemName.textContent = item.value;
+    cartItem.appendChild(itemName);
+
+    const quantityDisplay = document.createElement('span');
+    quantityDisplay.textContent = `Quantity: ${quantity}`;
+    cartItem.appendChild(quantityDisplay);
+
+    const priceDisplay = document.createElement('span');
+    priceDisplay.textContent = `Price: ₹${total}`;
+    cartItem.appendChild(priceDisplay);
+
+    const decreaseButton = document.createElement('button');
+    decreaseButton.textContent = '-';
+    decreaseButton.addEventListener('click', () => {
+      decreaseQuantity(cartItem);
+    });
+    cartItem.appendChild(decreaseButton);
+
+    const increaseButton = document.createElement('button');
+    increaseButton.textContent = '+';
+    increaseButton.addEventListener('click', () => {
+      increaseQuantity(cartItem);
+    });
+    cartItem.appendChild(increaseButton);
+
+    const removeButton = document.createElement('button');
+    removeButton.textContent = 'Remove';
+    removeButton.addEventListener('click', () => {
+      cartItem.remove();
+    });
+    cartItem.appendChild(removeButton);
+
+    document.getElementById('cart').appendChild(cartItem);
+  });
+}
+
+function decreaseQuantity(item) {
+  const quantityDisplay = item.querySelector('span:nth-child(2)');
+  const quantity = parseInt(quantityDisplay.textContent.split(' ')[1]);
+  if (quantity > 1) {
+    const newQuantity = quantity - 1;
+    quantityDisplay.textContent = `Quantity: ${newQuantity}`;
+
+
+
+    const priceDisplay = item.querySelector('span:nth-child(3)');
+    const price = parseFloat(priceDisplay.textContent.split(' ')[1].substring(1));
+    const basePrice = price/quantity
+    const totalPrice = (newQuantity * basePrice).toFixed(2);
+    priceDisplay.textContent = `Price: ₹${totalPrice}`;
+  }
+
+}
+
+function increaseQuantity(item) {
+  const quantityDisplay = item.querySelector('span:nth-child(2)');
+  const quantity = parseInt(quantityDisplay.textContent.split(' ')[1]);
+  const newQuantity = quantity + 1;
+  quantityDisplay.textContent = `Quantity: ${newQuantity}`;
+
+  const priceDisplay = item.querySelector('span:nth-child(3)');
+  const price = parseFloat(priceDisplay.textContent.split(' ')[1].substring(1));
+  const basePrice = price/quantity
+  const totalPrice = (newQuantity * basePrice).toFixed(2);
+  priceDisplay.textContent = `Price: ₹${totalPrice}`;
+}
+
+function generateWhatsAppLink() {
+  const cartItems = document.querySelectorAll('.cart-item');
+  let message = 'Order:';
+  let totalPrice = 0;
+
+  cartItems.forEach(item => {
+    const itemName = item.querySelector('span:nth-child(1)').textContent;
+    const quantity = parseInt(item.querySelector('span:nth-child(2)').textContent.split(' ')[1]);
+    const price = parseFloat(item.querySelector('span:nth-child(3)').textContent.split(' ')[1].substring(1));
+    const basePrice = price/quantity
+    const itemTotal = (quantity * basePrice).toFixed(2);
+
+    message += `\n${itemName}: ${quantity} - ₹${itemTotal}`;
+    totalPrice += parseFloat(itemTotal);
+  });
+
+  message += `\nTotal: ₹${totalPrice.toFixed(2)}`;
+
+  const mobileNumber = '918619258978'; // Replace with your mobile number
+
+  const encodedMessage = encodeURIComponent(message);
+  const link = `https://wa.me/${mobileNumber}/?text=${encodedMessage}`;
+
+  window.open(link);
+}
+
+  </script>
+</body>
 </html>
