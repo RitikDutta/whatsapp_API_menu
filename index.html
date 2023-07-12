@@ -32,6 +32,21 @@
       margin-right: 10px;
     }
 
+    #cart {
+      margin-top: 20px;
+    }
+
+    .cart-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .cart-item input[type="number"] {
+      width: 40px;
+      margin-right: 10px;
+    }
+
     .number-input {
       display: inline-flex;
       align-items: center;
@@ -106,30 +121,6 @@
 
     #confirmButton:hover {
       background-color: #45a049;
-    }
-
-
-    #cart {
-      margin-top: 20px;
-    }
-    .cart-item {
-      display: flex;
-      align-items: center;
-      margin-bottom: 10px;
-      border: 1px solid #ccc;
-      padding: 10px;
-    }
-    .cart-item span {
-      margin-right: 10px;
-    }
-    .cart-item .quantity {
-      font-weight: bold;
-    }
-    .cart-item .price {
-      margin-left: auto;
-    }
-    .cart-item button {
-      margin-left: 10px;
     }
 
 
@@ -209,8 +200,8 @@ input[type=number]::-webkit-outer-spin-button {
   <div id="food-items">
     <h2> BURGERS </h2>
     <div class="food-item">
-      <input type="checkbox" name="item" value="Aloo Tikki" data-price="49">
-      <label>Aloo Tikki</label>
+      <input type="checkbox" name="item" value="Aloo Tikki" data-price="49" id="Aloo Tikki">
+      <label for="Aloo Tikki">Aloo Tikki</label>
       <div class="number-input">
         <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"></button>
         <input class="quantity" min="1" name="quantity" value="1" type="number">
@@ -219,8 +210,8 @@ input[type=number]::-webkit-outer-spin-button {
     </div>
 
     <div class="food-item">
-      <input type="checkbox" name="item" value="Hell" data-price="69">
-      <label>Veg Supreme</label>
+      <input type="checkbox" name="item" value="Veg Supreme" data-price="69" id="Veg Supreme">
+      <label for="Veg Supreme">Veg Supreme</label>
 
       <div class="number-input">
         <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"></button>
@@ -230,8 +221,8 @@ input[type=number]::-webkit-outer-spin-button {
     </div>
 
     <div class="food-item">
-      <input type="checkbox" name="item" value="Heaven" data-price="79">
-      <label>Heaven</label>
+      <input type="checkbox" name="item" value="Heaven" data-price="79" id="Heaven">
+      <label for='Heaven'>Heaven</label>
 
       <div class="number-input">
         <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"></button>
@@ -241,8 +232,8 @@ input[type=number]::-webkit-outer-spin-button {
     </div>
 
     <div class="food-item">
-      <input type="checkbox" name="item" value="Hell" data-price="85">
-      <label>Hell</label>
+      <input type="checkbox" name="item" value="Hell" data-price="85" id="Hell">
+      <label for="Hell">Hell</label>
 
       <div class="number-input">
         <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"></button>
@@ -254,8 +245,8 @@ input[type=number]::-webkit-outer-spin-button {
     <h2> MAGGIES </h2>
 
     <div class="food-item">
-      <input type="checkbox" name="item" value="Plain Maggie" data-price="49">
-      <label>Plain Maggie</label>
+      <input type="checkbox" name="item" value="Plain Maggie" data-price="49" id="Plain Maggie">
+      <label for="Plain Maggie">Plain Maggie</label>
 
       <div class="number-input">
         <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"></button>
@@ -265,8 +256,8 @@ input[type=number]::-webkit-outer-spin-button {
     </div>
 
     <div class="food-item">
-      <input type="checkbox" name="item" value="Veg Maggie" data-price="59">
-      <label>Veg Maggie</label>
+      <input type="checkbox" name="item" value="Veg Maggie" data-price="59" id="Veg Maggie">
+      <label for="Veg Maggie">Veg Maggie</label>
 
       <div class="number-input">
         <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"></button>
@@ -276,8 +267,8 @@ input[type=number]::-webkit-outer-spin-button {
     </div>
 
     <div class="food-item">
-      <input type="checkbox" name="item" value="Cheese Veg Maggie" data-price="69">
-      <label>Cheese Veg Maggie</label>
+      <input type="checkbox" name="item" value="Cheese Veg Maggie" data-price="69" id="Cheese Veg Maggie">
+      <label for="Cheese Veg Maggie">Cheese Veg Maggie</label>
 
       <div class="number-input">
         <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"></button>
@@ -287,8 +278,8 @@ input[type=number]::-webkit-outer-spin-button {
     </div>
 
     <div class="food-item">
-      <input type="checkbox" name="item" value="Cheese Burst" data-price="89">
-      <label>Cheese Burst</label>
+      <input type="checkbox" name="item" value="Cheese Burst" data-price="89" id="Cheese Burst">
+      <label for="Cheese Burst">Cheese Burst</label>
 
       <div class="number-input">
         <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"></button>
@@ -300,8 +291,8 @@ input[type=number]::-webkit-outer-spin-button {
     <h2> FRIES </h2>
 
     <div class="food-item">
-      <input type="checkbox" name="item" value="Salty Fries" data-price="65">
-      <label>Salty Fries</label>
+      <input type="checkbox" name="item" value="Salty Fries" data-price="65" id="Salty Fries">
+      <label for="Salty Fries">Salty Fries</label>
 
       <div class="number-input">
         <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"></button>
@@ -311,8 +302,8 @@ input[type=number]::-webkit-outer-spin-button {
     </div>
 
     <div class="food-item">
-      <input type="checkbox" name="item" value="Peri Peri" data-price="75">
-      <label>Peri Peri</label>
+      <input type="checkbox" name="item" value="Peri Peri" data-price="75" id="Peri Peri">
+      <label for="Peri Peri">Peri Peri</label>
 
       <div class="number-input">
         <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"></button>
@@ -322,8 +313,8 @@ input[type=number]::-webkit-outer-spin-button {
     </div>
 
     <div class="food-item">
-      <input type="checkbox" name="item" value="Cheese Fries" data-price="85">
-      <label>Cheese Fries</label>
+      <input type="checkbox" name="item" value="Cheese Fries" data-price="85" id="Cheese Fries">
+      <label for="Cheese Fries">Cheese Fries</label>
 
       <div class="number-input">
         <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"></button>
@@ -333,8 +324,8 @@ input[type=number]::-webkit-outer-spin-button {
     </div>
 
     <div class="food-item">
-      <input type="checkbox" name="item" value="Cheese Burst" data-price="95">
-      <label>Cheese Burst</label>
+      <input type="checkbox" name="item" value="Cheese Burst Fries" data-price="95" id="Cheese Burst Fries">
+      <label for="Cheese Burst Fries">Cheese Burst Fries</label>
 
       <div class="number-input">
         <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"></button>
@@ -346,8 +337,8 @@ input[type=number]::-webkit-outer-spin-button {
     <h2>COMBO</h2>
 
     <div class="food-item">
-      <input type="checkbox" name="item" value="Eco Combo" data-price="129">
-      <label>Eco Combo</label>
+      <input type="checkbox" name="item" value="Eco Combo" data-price="129" id="Eco Combo">
+      <label for="Eco Combo">Eco Combo</label>
 
       <div class="number-input">
         <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"></button>
@@ -357,8 +348,8 @@ input[type=number]::-webkit-outer-spin-button {
     </div>
 
     <div class="food-item">
-      <input type="checkbox" name="item" value="Heaven Combo" data-price="159">
-      <label>Heaven Combo</label>
+      <input type="checkbox" name="item" value="Heaven Combo" data-price="159" id="Heaven Combo">
+      <label for="Heaven Combo">Heaven Combo</label>
 
       <div class="number-input">
         <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"></button>
@@ -368,8 +359,8 @@ input[type=number]::-webkit-outer-spin-button {
     </div>
 
     <div class="food-item">
-      <input type="checkbox" name="item" value="Hell Combo" data-price="165">
-      <label>Hell Combo</label>
+      <input type="checkbox" name="item" value="Hell Combo" data-price="165" id="Hell Combo">
+      <label for="Hell Combo">Hell Combo</label>
 
       <div class="number-input">
         <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"></button>
@@ -379,8 +370,8 @@ input[type=number]::-webkit-outer-spin-button {
     </div>
 
     <div class="food-item">
-      <input type="checkbox" name="item" value="Family Combo" data-price="175">
-      <label>Family Combo</label>
+      <input type="checkbox" name="item" value="Family Combo" data-price="175" id="Family Combo">
+      <label for="Family Combo">Family Combo</label>
 
       <div class="number-input">
         <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"></button>
@@ -390,8 +381,8 @@ input[type=number]::-webkit-outer-spin-button {
     </div>
 
     <div class="food-item">
-      <input type="checkbox" name="item" value="Supreme Meal" data-price="299">
-      <label>Supreme Meal</label>
+      <input type="checkbox" name="item" value="Supreme Meal" data-price="299" id="Supreme Meal">
+      <label for="Supreme Meal">Supreme Meal</label>
 
       <div class="number-input">
         <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"></button>
@@ -509,7 +500,7 @@ function generateWhatsAppLink() {
 
   message += `\nTotal: ₹${totalPrice.toFixed(2)}`;
 
-  const mobileNumber = '918619258978'; 
+  const mobileNumber = '918619258978';
 
   const encodedMessage = encodeURIComponent(message);
   const link = `https://wa.me/${mobileNumber}/?text=${encodedMessage}`;
