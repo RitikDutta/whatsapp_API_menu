@@ -5,9 +5,9 @@
         <script type="text/javascript">
             function printChecked() {
                 var items = document.getElementsByName("acs");
-                var selectedItems = "https://wa.me/918619258978?text=hello+there+";
+                var selectedItems = "https://wa.me/918619258978?text=Items+Are%0a";
                 for (var i = 0; i < items.length; i++) {
-                    if (items[i].type == "checkbox" && items[i].checked == true) selectedItems += items[i].value + "\n";
+                    if (items[i].type == "checkbox" && items[i].checked == true) selectedItems += items[i].value + "%0a";
                 }
                                 // Create anchor element.
                 var a = document.createElement('a'); 
