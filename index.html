@@ -484,16 +484,16 @@ function increaseQuantity(item) {
 
 function generateWhatsAppLink() {
   const cartItems = document.querySelectorAll('.cart-item');
-  let message = 'Order Details:\n\n';
+  let message = 'Welcome to AmmoHammo:\n\nOrders\n';
+  let itemDetails = '';
 
   cartItems.forEach(item => {
     const itemName = item.querySelector('span:nth-child(1)').textContent;
     const quantity = parseInt(item.querySelector('span:nth-child(2)').textContent.split(' ')[1]);
     const price = parseFloat(item.querySelector('span:nth-child(3)').textContent.split(' ')[1].substring(1));
-    const basePrice = price / quantity;
-    const itemTotal = (quantity * basePrice).toFixed(2);
+    const itemTotal = (quantity * price).toFixed(2);
 
-    message += `${itemName}: ${quantity} x ₹${basePrice} = ₹${itemTotal}\n`;
+    itemDetails += `${itemName} ₹${price} (${quantity}) = ₹${itemTotal}\n`;
   });
 
   const totalPrice = Array.from(cartItems).reduce((total, item) => {
@@ -501,7 +501,10 @@ function generateWhatsAppLink() {
     return total + price;
   }, 0).toFixed(2);
 
-  message += `\nTotal: ₹${totalPrice}`;
+  message += '..................................\n';
+  message += itemDetails;
+  message += '..................................\n';
+  message += `TOTAL          ₹${totalPrice}\n\nWe are Happy to Serve.`;
 
   const mobileNumber = '918619258978';
 
@@ -510,6 +513,7 @@ function generateWhatsAppLink() {
 
   window.open(link);
 }
+
 
 
   </script>
