@@ -491,9 +491,10 @@ function generateWhatsAppLink() {
     const itemName = item.querySelector('span:nth-child(1)').textContent;
     const quantity = parseInt(item.querySelector('span:nth-child(2)').textContent.split(' ')[1]);
     const price = parseFloat(item.querySelector('span:nth-child(3)').textContent.split(' ')[1].substring(1));
-    const itemTotal = (quantity * price).toFixed(2);
+    const basePrice = price/quantity
+    const itemTotal = (quantity * basePrice).toFixed(2);
 
-    itemDetails += `${itemName} ₹${price} (${quantity}) = ₹${itemTotal}\n`;
+    itemDetails += `${itemName} ₹${basePrice} (${quantity}) = ₹${itemTotal}\n`;
   });
 
   const totalPrice = Array.from(cartItems).reduce((total, item) => {
