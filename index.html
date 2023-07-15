@@ -493,7 +493,7 @@ function generateWhatsAppLink() {
     const price = parseFloat(item.querySelector('span:nth-child(3)').textContent.split(' ')[1].substring(1));
     const itemTotal = (quantity * price).toFixed(2);
 
-    itemDetails += `${itemName} ₹${price} (${quantity}) = ₹${itemTotal}\n`;
+    itemDetails += ` • ${itemName} ₹${price} (${quantity}) = ₹${itemTotal}\n`;
   });
 
   const totalPrice = Array.from(cartItems).reduce((total, item) => {
