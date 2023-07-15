@@ -517,7 +517,7 @@ function generateWhatsAppLink() {
     const basePrice = price/quantity
     const itemTotal = (quantity * basePrice).toFixed(2);
 
-    itemDetails += `${itemName} ₹${basePrice} (${quantity}) = ₹${itemTotal}\n`;
+    itemDetails += `• ${itemName} ₹${basePrice} (${quantity}) = ₹${itemTotal}\n`;
   });
 
   const totalPrice = Array.from(cartItems).reduce((total, item) => {
