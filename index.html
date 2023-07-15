@@ -493,7 +493,7 @@ function generateWhatsAppLink() {
     const price = parseFloat(item.querySelector('span:nth-child(3)').textContent.split(' ')[1].substring(1));
     const itemTotal = (quantity * price).toFixed(2);
 
-    itemDetails += ` • ${itemName} ₹${price} (${quantity}) = ₹${itemTotal}\n`;
+    itemDetails += `${itemName} ₹${price} (${quantity}) = ₹${itemTotal}\n`;
   });
 
   const totalPrice = Array.from(cartItems).reduce((total, item) => {
@@ -504,7 +504,24 @@ function generateWhatsAppLink() {
   message += '..................................\n';
   message += itemDetails;
   message += '..................................\n';
-  message += `TOTAL          ₹${totalPrice}\n\nWe are Happy to Serve.`;
+  message += `TOTAL          ₹${totalPrice}\n\n`;
+
+  // Array of random thank you messages
+  const thankYouMessages = [
+    "Thank you for choosing AmmoHammo! Your satisfaction is our top priority.",
+    "We appreciate your business! Thank you for supporting AmmoHammo.",
+    "A big thank you for your order! We hope it exceeds your expectations.",
+    "Your order brings a smile to our faces! Thank you for choosing AmmoHammo.",
+    "We're grateful for your trust and support. Thank you for being our customer!",
+    "Thanks a bunch for choosing AmmoHammo! We're here to serve you.",
+    "Your order means the world to us! Thank you for being an AmmoHammo fan.",
+  ];
+
+  // Select a random thank you message
+  const randomIndex = Math.floor(Math.random() * thankYouMessages.length);
+  const randomThankYouMessage = thankYouMessages[randomIndex];
+
+  message += `"${randomThankYouMessage}"`;
 
   const mobileNumber = '918619258978';
 
@@ -513,6 +530,7 @@ function generateWhatsAppLink() {
 
   window.open(link);
 }
+
 
 
 
